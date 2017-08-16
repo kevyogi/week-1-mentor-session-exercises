@@ -68,6 +68,18 @@ function vowelCount(str){
  * ie: 68 => 1:8
  */
 
+function timeConvert(num){
+	if(typeof num !== "number"){
+		return null;
+	}else if(num < 0){
+		return "Negative time doesn't exist";
+	}
+	var hours = Math.floor(num / 60);
+	var minutes = num % 60;
+	var time = hours.toString() + ":" + minutes.toString();
+	return time;
+}
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -96,6 +108,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
+    timeConvert: timeConvert,
     repeatString: null
 }
