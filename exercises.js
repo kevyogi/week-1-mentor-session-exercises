@@ -25,7 +25,17 @@
  * ie: "cake" => "acek"
  */
 
-
+function alphaOrder(str){
+    if(typeof str !== "string"){
+      return null;
+    }
+	var alphaString = "";
+	var splitString = str.split("").sort();
+    for(var i = 0; i < splitString.length; i++){
+      alphaString = alphaString + splitString[i];
+    }
+    return alphaString;
+}
 
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
@@ -70,7 +80,7 @@
 
 module.exports = {
     firstReverse: firstReverse,
-    alphaOrder: null,
+    alphaOrder: alphaOrder,
     vowelCount: null,
     timeConvert: null,
     repeatString: null
